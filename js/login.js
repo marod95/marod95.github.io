@@ -19,5 +19,6 @@ function comprobarClave() {
     window.location.href = "index.html";
   } else {
     showAlertError();
+    window.location.href = "login.html";
   }
 }
