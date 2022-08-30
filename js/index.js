@@ -13,9 +13,6 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 
-document.getElementById("submit").addEventListener("click", ()=>{
-    localStorage.setItem('user', document.getElementById("email").value);
-    localStorage.getItem('user');
     document.getElementById("Login").innerHTML = localStorage.getItem('user');
-  })
+
   
