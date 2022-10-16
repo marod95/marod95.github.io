@@ -25,6 +25,7 @@ function comprobarClave() {
 }
 
 document.getElementById("submit").addEventListener("click", ()=>{
-  localStorage.setItem('user', document.getElementById("email").value);
+  localStorage.setItem('user', document.getElementById("email").value.split("@")[0]);
   document.getElementById("Login").innerHTML = localStorage.getItem('user');
+
 })

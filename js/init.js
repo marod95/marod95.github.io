@@ -40,3 +40,29 @@ let getJSONData = function(url){
     });
 }
 
+// Identificador y dropdown
+if(localStorage.getItem("submit")== undefined){
+  document.getElementById("Login").innerHTML = "Login";
+  } else{
+    document.getElementById("user").innerHTML = localStorage.getItem("user");
+  }
+  
+  
+  /*  else{
+    <div class="dropdown">
+   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Login
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="cart.html">Mi Carrito</a></li>
+                <li><a class="dropdown-item" href="my-profile.html"> Mi Perfil</a></li>
+                <li><a class="dropdown-item"  href="#" >Cerrar Sesión</a></li>
+  </ul>
+</div>
+  } */
+
+
+  //Cerrar Sesión
+   function cerrarSesion(){
+    localStorage.removeItem("user");
+  } 

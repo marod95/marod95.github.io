@@ -1,5 +1,6 @@
 const URL = PRODUCT_INFO_URL + localStorage.getItem("ProdID") + EXT_TYPE;
-const URLCOMENT = PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("ProdID") + EXT_TYPE;
+const URLCOMENT =
+  PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("ProdID") + EXT_TYPE;
 let producto = {};
 let producto_info_comments = {};
 
@@ -52,17 +53,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let imagesToAppend = "";
       for (let i = 0; i < producto.images.length; i++) {
-        imagesToAppend += `<div class="">
-             <img class="img" src="${producto.images[i]}">  
+        imagesToAppend += `<div class="col">
+             <img class="img-thumbnail" src="${producto.images[i]}">  
              </div> 
               `;
       }
       document.getElementById("Imagen").innerHTML += imagesToAppend;
+
+      fetch(URLCOMENT)
+      .then((resp) => resp.json())
+      .then((dato) => {
+        coments = dato;
+        showcoments(coments);
+      });
+
+      //Productos relacionados//
+      document.getElementById("prodRel").innerHTML += `
+<h3>Productos relacionados</h3>`;
+      for (prodRel of producto.relatedProducts) {
+        document.getElementById("prodRel").innerHTML += `
+  <div class="col-4">
+  <img onclick="setProduct(${prodRel.id})"class="card-img-top" src="${prodRel.image}" alt="Card imgage";
+  <h5 class="ms-1">${prodRel.name}
+  </h5>
+  </div>
+  `;
+      }
     });
-  fetch(URLCOMENT)
-    .then((resp) => resp.json())
-    .then((dato) => {
-      coments = dato;
-      showcoments(coments);
-    });
+
+  
 });
+
+// Productos Relacionados //
+function setProduct(id) {
+  localStorage.setItem("ProdID", id);
+  window.location.href = "product-info.html";
+}

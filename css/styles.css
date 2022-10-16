@@ -5,6 +5,20 @@
   font-family: 'Raleway', serif !important;
 }
 
+h3,h5:hover{
+  color: coral;
+}
+
+.fa-star:hover{
+  color: gold;
+  zoom: 150%;
+}
+h3::first-letter{
+  color: rgb(228, 78, 23);
+  font-size: 130%;
+}
+
+
 .jumbotron .display-4 {
   font-weight: bold;
 }
