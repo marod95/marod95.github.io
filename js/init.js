@@ -41,11 +41,12 @@ let getJSONData = function(url){
 }
 
 // Identificador y dropdown
-if(localStorage.getItem("submit")== undefined){
+if(localStorage.getItem("user")== undefined){
   document.getElementById("Login").innerHTML = "Login";
   } else{
-    document.getElementById("user").innerHTML = localStorage.getItem("user");
+  document.getElementById("dropdownMenuButton1").innerHTML = localStorage.getItem("user");
   }
+  
   
   
   /*  else{
