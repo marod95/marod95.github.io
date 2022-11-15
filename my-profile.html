@@ -63,12 +63,107 @@
     </div>
   </nav>
   <main>
+  <form action="#" method="get" class="row mt-4 needs-validation" id="form" novalidate>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="row">
+        <div class="col-md-8 mb-4">
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0">Perfil</h5>
+            </div>
+            <div class="card-body">
+                <!-- Primer nombre -->
+                <div class="row mb-4">
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" class="form-control" id="name1" required />
+                      <label class="form-label" for="name1" >Primer nombre*</label>
+                      <div class="valid-feedback">
+                      </div>
+                      <div class="invalid-feedback">
+                        Ingrese Nombre
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Segundo nombre -->
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" class="form-control" id="name2" />
+                      <label class="form-label" for="name2" >Segundo nombre</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Primer apellido -->
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" class="form-control" id="lastName1" required />
+                    <label class="form-label" for="lastName1" >Primer apellido*</label>
+                    <div class="valid-feedback">
+                    </div>
+                    <div class="invalid-feedback">
+                      Ingrese Apellido
+                    </div>
+                  </div>
+                </div>
+                <!-- Segundo Apellido -->
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" class="form-control" id="lastName2" />
+                    <label class="form-label" for="lastName2" >Segundo apellido</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- Email -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" class="form-control" id="e-mail" placeholder="name@example.com" required>
+                  <label for="email">Email*</label>
+                  <div class="valid-feedback">
+                  </div>
+                  <div class="invalid-feedback">
+                    Ingrese Email
+                  </div>
+                </div>
+              </div>
+              <!-- Telefono -->
+              <div class="col">
+                <div class="form-outline">
+                  <input type="number" class="form-control" id="numero" />
+                <label class="form-label" for="numero" >Teléfono de Contacto</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="saveData" onclick="saveDataProfile(), SaveProfile()">
+          Guardar datos
+        </button>
+          </div>
+        </div>
       </div>
     </div>
+  </form>
+
+  <!-- Mensaje Alerta -->
+<div class="alert alert-success alert-dismissible fade" role="alert" id="alert-success">
+  <p>Datos guardados correctamente</p>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="alert alert-danger alert-dismissible fade" role="alert" id="alert-danger">
+  <p>Faltan datos obligatorios (*)</p>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<!-- /Mensaje Alerta -->
+
   </main>
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
